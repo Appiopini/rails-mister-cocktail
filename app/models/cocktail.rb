@@ -1,4 +1,4 @@
 class Cocktail < ApplicationRecord
-  has_many :ingredients
+  has many :ingredients through: :dosess
   has_many :doses
 end
