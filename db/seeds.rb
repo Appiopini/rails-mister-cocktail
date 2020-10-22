@@ -17,13 +17,13 @@ Ingredient.destroy_all
 puts 'criando um registro'
 10.times do
   cocktails = Cocktail.create(
-    name: Faker::Restaurant.name
+    name: Faker::Beer.malts
   )
   ingredients = Ingredient.create(
-    name: Faker::Restaurant.name
+    name: Faker::Food.ingredient
   )
   Dose.create(
-    description: Faker::Restaurant.name,
+    description: Faker::Food.measurement,
     cocktail: cocktails,
     ingredient: ingredients
   )

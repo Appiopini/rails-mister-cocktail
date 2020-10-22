@@ -1,4 +1,22 @@
-<h1>Fancy Cocktails</h1>
-<h2><% @cocktails.each do |cocktail| %></h2>
-    <%= link_to cocktail.name, cocktail %>
+<div class="container">
+  <div class="banner-content">
+    <h1>Le Wagon's cocktails</h1>
+    <p>Awesome beverages for developers nightlife</p>
+  </div>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+<!--       <div class="col-12 col-md-6 col-lg-3"> -->
+        <table class="table table-bordered">
+          <div class="card">
+            <h2><%= cocktail.name %></h2>
+            <%= link_to "See detais", cocktail_path(cocktail) %>
+            <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fa fa-trash destroy_dose"></i>
+            <% end %>
+          </div>
+        </table>
+<!--       </div> -->
     <% end %>
+  </div>
+<%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-sm" %>
+</div>
