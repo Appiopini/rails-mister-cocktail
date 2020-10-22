@@ -8,7 +8,10 @@
 <!--       <div class="col-12 col-md-6 col-lg-3"> -->
         <table class="table table-bordered">
           <div class="card">
-            <h2><%= cocktail.name %></h2>
+            <h2><%= cocktail.name %>
+              <%= cl_image_tag("bbc672z6zvqf5374vedd",
+              width: 400, height: 300, crop: :fill) %>
+            </h2>
             <%= link_to "See detais", cocktail_path(cocktail) %>
             <%= link_to cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="fa fa-trash destroy_dose"></i>
@@ -18,5 +21,6 @@
 <!--       </div> -->
     <% end %>
   </div>
+
 <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-sm" %>
 </div>
